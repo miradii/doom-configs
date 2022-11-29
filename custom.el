@@ -3,6 +3,7 @@
 (require 'yaml-mode)
 (require 'json-mode)
 (require 'graphql-mode)
+(require 'nov)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

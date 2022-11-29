@@ -51,10 +51,6 @@
 
 ; to get vue goodies
 (package! nov)
-(use-package! nov
-  :mode ("\\.epub\\'" . nov-mode)
-  :config
-  (setq nov-save-place-file (concat doom-cache-dir "nov-places")))
 (package! prettier)
 (package! web-mode)
 (package! yaml-mode)
