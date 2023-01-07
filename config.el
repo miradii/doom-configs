@@ -17,10 +17,14 @@
 ;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
 ;;   presentations or streaming.
 ;;
+;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+;; (setq doom-font "Fira Code Nerd Font")
+(setq doom-font (font-spec :family "Fira Code Nerd Font" :size 14 :weight 'light))
+;; (setq doom-variable-pitch-font (font-spec :family "Halant" :size 17 :weight 'semi-bold))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -83,6 +87,7 @@
       :nv  "[h"    #'drag-stuff-left
 )
 
+
 (setq doom-themes-treemacs-theme "doom-colors")
 
 ;;(after! lsp-python-ms
@@ -110,8 +115,8 @@
 ;; transparency config
 ;;(set-frame-parameter (selected-frame) 'alpha '(<active> . <inactive>))
  ;;(set-frame-parameter (selected-frame) 'alpha <both>)
- (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
- (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+ (set-frame-parameter (selected-frame) 'alpha '(95 . 50))
+ (add-to-list 'default-frame-alist '(alpha . (95 . 50)))
 
 (defun toggle-transparency ()
    (interactive)
@@ -141,3 +146,13 @@
     )
     )
 (global-set-key (kbd "C-c b") 'toggle-paragraph-direction)
+
+
+;; org habits
+   (require 'org-habit)
+  ;; (add-to-list 'org-modules 'org-habit)
+   (setq org-habit-graph-column 60)
+
+;; lsp hover docs
+(after! lsp-ui
+  (setq lsp-ui-doc-enable t))
